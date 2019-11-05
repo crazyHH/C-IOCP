@@ -1,0 +1,35 @@
+/**
+ *	函数:	Compress, Uncompress
+ *
+ *	功能:	zlib库压缩与解压缩
+ *
+ *	参数:	无
+ */
+compress(pCompress, &desLen, &m_bBuffer[0], m_nUsed )
+
+	
+uncompress(pCompress, &desLen, &m_bBuffer[0], m_nUsed )
+
+
+
+zlib库主要就两个函数，压缩解压缩
+
+
+函数使用方法：http://blog.csdn.net/turingo/article/details/8148264
+
+
+
+库使用方法：1.2.8版本下有两个头文件，和两个lib文件
+
+zlibstat.lib    release版本使用
+zlibstat_D.lib  debug版本使用
+
+使用时需要调用对应版本的lib文件，和zlib.h头文件
+
+
+例：	#include "zlib.h"
+	#ifdef _DEBUG
+		#pragma comment(lib, "zlibstat_D.lib")
+	#else
+		#pragma comment(lib, "zlibstat.lib")
+	#endif // _DEBUG
